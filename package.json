@@ -18,6 +18,7 @@
     "react-native-datepicker": "^1.7.2",
     "react-native-push-notification": "^3.1.9",
     "react-native-storage": "^1.0.1",
+    "react-native-vector-icons": "^6.6.0",
     "react-navigation": "^4.0.10"
   },
   "devDependencies": {
@@ -32,7 +33,6 @@
     "@types/react-native-i18n": "^2.0.0",
     "@types/react-native-navigation": "^2.0.0",
     "@types/react-native-push-notification": "^3.0.7",
-    "@types/react-native-restart": "0.0.0",
     "@types/react-native-swipe-gestures": "^1.0.4",
     "@types/react-native-vector-icons": "^6.4.4",
     "@types/react-test-renderer": "^16.9.0",
