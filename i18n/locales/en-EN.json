@@ -1,0 +1,182 @@
+{
+  "entry": {
+    "title": "GooDTime",
+    "auth": "Authorization",
+    "login": "Login",
+    "password": "Password",
+    "singIn": "Sing in",
+    "logOut": "Log out",
+    "welcome": "Welcome worker!",
+    "settings": "Settings",
+    "goBack": "Go back",
+    "pickDay": "Pick a day ...",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create"
+  },
+  "central": {
+    "calendar": "Calendar",
+    "notific": "Notification",
+    "legend": "About app"
+  },
+  "legend": {
+    "events": {
+      "relax": "Vacation"
+    },
+    "days": {
+
+    },
+    "exchange": {
+
+    },
+    "functional": {
+
+    }
+  },
+  "server": {
+    "adress": "Adress server",
+    "emptyAdress": "Enter adress ...",
+    "save": "Save",
+    "edit": "Edit",
+    "updated": "Updated"
+  },
+  "language": {
+    "russian": "Russian",
+    "english": "English",
+    "change": "Change language"
+  },
+  "status": {
+    "APPROVED": "Approved",
+    "NOT_APPROVED": "Not approved",
+    "SEND_TO_EXCHANGE": "Sent to the exchange"
+  },
+  "load": {
+    "getUserData": "Get user data",
+    "formScheduleFor": "We form the schedule for",
+    "getShiftsFor": "Get shifts for",
+    "deleteEvent": "Delete event",
+    "editEvent": "Edit event",
+    "getShift": "We take the shift from the exchange",
+    "takeShift": "We give the change to the exchange",
+    "takeShiftOnExchange": "Give a change to the exchange",
+    "getShiftOnExchange": "Take a shift from the exchange",
+    "createRequestEvent": "Create an event request",
+    "createEvent": "Event creation",
+    "editedEvent": "Event editing"
+  },
+  "error": {
+    "notConnect": "No connection or server address entered incorrectly",
+    "notCorrectAdress": "No login or password is specified correctly",
+    "tryAgainLater": "Communication error, try again later",
+    "notCorrectData": "Error! Check entered data",
+    "notCorrectGetData": "Error! Failed to receive data."
+  },
+  "events": {
+    "type": "Type of event",
+    "infoByDay": "Info by day",
+    "pickDate": "Pick day",
+    "edit": "Edit event",
+    "workDay": "Work day",
+    "weekend": "Weekend",
+    "lunch": "With lunch",
+    "notLunch": "Without lunch",
+    "startTime": "Start time",
+    "endTime": "End time",
+    "startDate": "Start date",
+    "endDate": "End date",
+    "SHIFT": "Request shift",
+    "DAY_OFF": "Day off",
+    "PARTIAL_ABSENCE": "Partial absence",
+    "VACATION": "Vacation",
+    "SICK_LEAVE": "Sick leave",
+    "OFF_TIME": "Off time",
+    "TRAINING": "Training",
+    "BUSINESS_TRIP": "Business trip"
+  },
+  "eventType": {
+    "TASK_DEADLINE": "Expiration of the task completion period (per day / upon the expiration of the term)",
+    "TASK_STATUS_CHANGE": "Change task status",
+    "TASK_CREATION": "Task creation",
+    "TASK_DELETION": "Delete task",
+    "CLAIM_CONFIRMATION": "Confirmation of an application for actual hours worked",
+    "CLAIM_DELETION": "Deleting an application for actual hours worked",
+    "REQUEST_STATUS_CHANGE": "Change user request status",
+    "SHIFTS_CALCULATION": "Schedule Calculation / Recalculation",
+    "SHIFTS_CONFIRMATION": "Schedule approval",
+    "SHIFTS_PUBLISHING": "Schedule publishing",
+    "HISTORICAL_DATA_LOADING_CONFIRMATION": "Approving uploaded historical data",
+    "HISTORICAL_DATA_FORECAST_CONFIRMATION": "Approval of historical data forecast",
+    "FTE_CONFIRMATION": "Resource request approval",
+    "FTE_PUBLICATION": "Publish a resource request",
+    "TIMESHEET_CREATION": "Time sheet created",
+    "TIMESHEET_CONFIRMATION": "Approved timesheet",
+    "TIMESHEET_CONFIRMATION_DEADLINE": "Timeframe for approving timesheet",
+    "USER_REQUEST": "Create user request",
+    "ORGANIZATION_UNIT_CREATION": "Creating a new org module",
+    "EMPLOYEE_CREATION": "Create a new employee",
+    "SCHEDULE_TEMPLATE_UNATTACHED": "Schedule calculation template unlinked",
+    "ROSTER_READY": "The schedule is ready for publication",
+    "LOT_IS_NOT_ASSIGNED": "Lot not assigned",
+    "CONFIRM_SHIFT_EXCHANGE": "Exchange transmission confirmation",
+    "ACCEPT_SHIFT_EXCHANGE": "Change sent to the exchange",
+    "REJECT_SHIFT_EXCHANGE": "Exchange shift rejected"
+  },
+  "notification": {
+    "getNotificaton": "Get notification",
+    "notHaveNotification": "You don't have notifications this type"
+  },
+  "typeNotification": {
+    "all": "All notifications",
+    "recevied": "Recevied notifications",
+    "notRecevied": "Not recevied notifications",
+    "deleted": "Deleted notifications"
+  },
+  "shifts": {
+    "FULL_DAY": "Full day shift",
+    "MIDDLE": "Mid-day shift",
+    "OPEN": "Work shift from opening",
+    "CLOSE": "Work shift before closing",
+    "OUTSIDE_OPEN": "Outside open",
+    "OUTSIDE_CLOSE": "Outside close",
+    "EXCHANGE": "Open shift in exchange"
+  },
+  "helpers": {
+    "number": "number",
+    "damp": "Turn the device to continue",
+    "in": "In"
+  },
+  "namesMonths": {
+    "1": "January",
+    "2": "February",
+    "3": "March",
+    "4": "April",
+    "5": "May",
+    "6": "June",
+    "7": "July",
+    "8": "August",
+    "9": "September",
+    "10": "October",
+    "11": "November",
+    "12": "December"
+  },
+  "daysOfWeek": {
+    "short": {
+      "1": "Mo",
+      "2": "Tu",
+      "3": "We",
+      "4": "Th",
+      "5": "Fr",
+      "6": "Sa",
+      "7": "Su"
+    },
+    "long": {
+      "1": "Monday",
+      "2": "Tuesday",
+      "3": "Wednesday",
+      "4": "Thursday",
+      "5": "Friday",
+      "6": "Saturday",
+      "7": "Sunday"
+    }
+  }
+}
