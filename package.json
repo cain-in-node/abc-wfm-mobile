@@ -14,7 +14,9 @@
     "mobx-react": "^6.1.4",
     "moment": "^2.24.0",
     "react": "16.8.6",
-    "react-native": "0.60.5"
+    "react-native": "0.60.5",
+    "react-native-datepicker": "^1.7.2",
+    "react-navigation": "^4.0.10"
   },
   "devDependencies": {
     "@babel/core": "^7.5.0",
