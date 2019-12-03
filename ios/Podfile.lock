@@ -85,6 +85,8 @@ PODS:
     - React
   - RNGestureHandler (1.5.2):
     - React
+  - RNI18n (2.0.15):
+    - React
   - RNVectorIcons (6.6.0):
     - React
   - yoga (0.60.5.React)
@@ -113,6 +115,7 @@ DEPENDENCIES:
   - React-RCTWebSocket (from `../node_modules/react-native/Libraries/WebSocket`)
   - "RNCAsyncStorage (from `../node_modules/@react-native-community/async-storage`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
+  - RNI18n (from `../node_modules/react-native-i18n`)
   - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
@@ -167,6 +170,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-community/async-storage"
   RNGestureHandler:
     :path: "../node_modules/react-native-gesture-handler"
+  RNI18n:
+    :path: "../node_modules/react-native-i18n"
   RNVectorIcons:
     :path: "../node_modules/react-native-vector-icons"
   yoga:
@@ -197,6 +202,7 @@ SPEC CHECKSUMS:
   React-RCTWebSocket: cd932a16b7214898b6b7f788c8bddb3637246ac4
   RNCAsyncStorage: 6b57de0f6cb0dcfd17521af1681fa39001d3efff
   RNGestureHandler: 946a7691e41df61e2c4b1884deab41a4cdc3afff
+  RNI18n: e2f7e76389fcc6e84f2c8733ea89b92502351fd8
   RNVectorIcons: 0bb4def82230be1333ddaeee9fcba45f0b288ed4
   yoga: 312528f5bbbba37b4dcea5ef00e8b4033fdd9411
 
