@@ -53,7 +53,7 @@ const DrawerConfig = {
 	}
 }
 
-const DrawerNavigator =  createDrawerNavigator({Calendar: Details, Notification: Notification, Legend: Legend}, DrawerConfig);
+const DrawerNavigator = createDrawerNavigator({Calendar: Details, Notification: Notification}, DrawerConfig);
 	
 const AuthContainer = createAppContainer(AuthNavStack);
 const DrawerContainer = createAppContainer(DrawerNavigator);

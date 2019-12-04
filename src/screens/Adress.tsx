@@ -27,7 +27,7 @@ export default class Adress extends Component<INavProps> {
   static navigationOptions = {header: null};
   private adressInput: any = TextInput;
 
-  componentWillMount() {
+  componentDidMount() {
     this.setState({
       adress: AuthApi.adress
     });

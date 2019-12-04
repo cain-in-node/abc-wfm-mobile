@@ -17,12 +17,9 @@ export default class App extends React.Component {
 		orientation == 'PORTRAIT' ? Orientation.lockToPortrait() : null;
 	};
 
-	componentWillMount() {
+	async componentDidMount() {
 		AuthApi.getAdress();
 		AuthApi.autoLogin();
-	}
-
-	async componentDidMount() {
 		FireBase.createNotificationListeners();
 		Orientation.lockToPortrait();
 		Orientation.addOrientationListener(this.onOrientationDidChange);

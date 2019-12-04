@@ -2,13 +2,18 @@ import React, { Component } from 'react';
 import { View, Text, StyleSheet,
 		 TouchableOpacity } from 'react-native';
 import { observer }   from 'mobx-react';
+import { DrawerActions } from 'react-navigation-drawer';
+import SafeAreaView from 'react-native-safe-area-view';
+import { NavigationActions } from 'react-navigation';
+import { StackActions } from 'react-navigation';
+import Swipeable from 'react-native-gesture-handler/Swipeable';
 
 // Localization
 import { strings }    from '../../i18n/i18n';
 
 // Components
-import GestureRecognizer from 'react-native-swipe-gestures';
 import Icon from 'react-native-vector-icons/FontAwesome5';
+import DrawerLayout from 'react-native-gesture-handler/DrawerLayout';
 
 // Interfaces
 import { INavProps } from '../interfaces/INavigation';
@@ -29,13 +34,11 @@ import Device from '../utils/sizes/sizeDevice';
 
 @observer
 export default class Menu extends Component<INavProps> {
-	state = {
-		currentPath: 'Calendar'
-	}
-
 	get fetchUserProfileDone() {
 		return UserApi.fetchingStatusUser === EFetchingStatus.done;
 	}
+
+	state = { fromLeft: true, type: 0 };
 
 	renderProfile() {
 		const position = UserApi.position._embedded.positions[0].name;
@@ -48,55 +51,62 @@ export default class Menu extends Component<INavProps> {
 	}
 
 	goToSection(section: string) {
-		this.props.navigation.navigate(section);
-		this.setState({ currentPath: section }, () => {
-			section === this.state.currentPath ? this.props.navigation.goBack() : null;
-		});
+		this.props.navigation.dispatch(NavigationActions.navigate({ routeName: section }));
+		this.props.navigation.dispatch(DrawerActions.closeDrawer());
 	}
 
-	render() {
-		const config = {
-			velocityThreshold: 0.01,
-			directionalOffsetThreshold: 150,
-			gestureIsClickThreshold: 2
-		};
+	renderDrawer = () => {
+		return (<Text>I am in the drawer!</Text>);
+	  };
 
+	render() {
 		return(
-			<GestureRecognizer config={config}
-				onSwipeLeft={() => this.props.navigation.toggleDrawer()}>
-				<View style={styles.container}>
-					<View style={styles.menu}>
-						<View style={styles.info}>
-							<View style={styles.profile}>
-								<View style={[styles.avatar]}>
-									<Icon name="user" size={Device.heightPercentageToDP('8%')} color={Colors.black}></Icon>
+			<View style={{flex: 1}}>
+				<DrawerLayout
+					drawerWidth={200}
+					drawerType='front'
+					drawerBackgroundColor="#ddd"
+					keyboardDismissMode="on-drag"
+					drawerPosition={
+						this.state.fromLeft
+						? 'left'
+						: 'right'
+					}
+					renderNavigationView={this.renderDrawer}>
+					<View style={styles.container}>
+						<View style={styles.menu}>
+							<View style={styles.info}>
+								<View style={styles.profile}>
+									<View style={[styles.avatar]}>
+										<Icon name="user" size={Device.heightPercentageToDP('8%')} color={Colors.black}></Icon>
+									</View>
+									{this.fetchUserProfileDone ? this.renderProfile() : null}
 								</View>
-								{this.fetchUserProfileDone ? this.renderProfile() : null}
 							</View>
-						</View>
-						<View style={styles.links}>
-							<View>
-								<TouchableOpacity onPress={() => this.goToSection('Calendar')}>
-									<Text style={styles.link}>{strings('central.calendar')}</Text>
-								</TouchableOpacity>
-								<TouchableOpacity onPress={() => this.goToSection('Notification')}>
-									<Text style={styles.link}>{strings('central.notific')}</Text>
-								</TouchableOpacity>
-								<TouchableOpacity onPress={() => this.goToSection('Legend')}>
-									<Text style={styles.link}>{strings('central.legend')}</Text>
+							<View style={styles.links}>
+								<View>
+									<TouchableOpacity onPress={() => this.goToSection('Calendar')}>
+										<Text style={styles.link}>{strings('central.calendar')}</Text>
+									</TouchableOpacity>
+									<TouchableOpacity onPress={() => this.goToSection('Notification')}>
+										<Text style={styles.link}>{strings('central.notific')}</Text>
+									</TouchableOpacity>
+									<TouchableOpacity onPress={() => this.goToSection('Legend')}>
+										<Text style={styles.link}>{strings('central.legend')}</Text>
+									</TouchableOpacity>
+								</View>
+								<TouchableOpacity onPress={() => AuthApi.logOut()}>
+									<Text style={[styles.buttonLogOut]}>{strings('entry.logOut')}</Text>
 								</TouchableOpacity>
 							</View>
-							<TouchableOpacity onPress={() => AuthApi.logOut()}>
-								<Text style={[styles.buttonLogOut]}>{strings('entry.logOut')}</Text>
-							</TouchableOpacity>
-						</View>
-						<View style={styles.footer}>
-							<Text style={styles.version}>App v1.0</Text>
+							<View style={styles.footer}>
+								<Text style={styles.version}>App v1.0</Text>
+							</View>
 						</View>
 					</View>
-				</View>
-			</GestureRecognizer>
-		)
+				</DrawerLayout>
+			</View>
+		);
 	}
 }
 
@@ -190,3 +200,44 @@ const styles = StyleSheet.create({
 		paddingTop: 10
 	},
 });
+
+// return(
+// 	<GestureRecognizer config={config}
+// 		onSwipeLeft={() => this.props.navigation.dispatch(DrawerActions.toggleDrawer())}>
+// 		<View style={styles.container}>
+// 			<View style={styles.menu}>
+// 				<View style={styles.info}>
+// 					<View style={styles.profile}>
+// 						<View style={[styles.avatar]}>
+// 							<Icon name="user" size={Device.heightPercentageToDP('8%')} color={Colors.black}></Icon>
+// 						</View>
+// 						{this.fetchUserProfileDone ? this.renderProfile() : null}
+// 					</View>
+// 				</View>
+// 				<View style={styles.links}>
+// 					<View>
+// 						<TouchableOpacity onPress={() => this.goToSection('Calendar')}>
+// 							<Text style={styles.link}>{strings('central.calendar')}</Text>
+// 						</TouchableOpacity>
+// 						<TouchableOpacity onPress={() => this.goToSection('Notification')}>
+// 							<Text style={styles.link}>{strings('central.notific')}</Text>
+// 						</TouchableOpacity>
+// 						<TouchableOpacity onPress={() => this.goToSection('Legend')}>
+// 							<Text style={styles.link}>{strings('central.legend')}</Text>
+// 						</TouchableOpacity>
+// 					</View>
+// 					<Swipeable renderRightActions={this.detect}>
+// 						<Text>Swipable</Text>
+// 					</Swipeable>
+// 					<TouchableOpacity onPress={() => AuthApi.logOut()}>
+// 						<Text style={[styles.buttonLogOut]}>{strings('entry.logOut')}</Text>
+// 					</TouchableOpacity>
+// 				</View>
+// 				<View style={styles.footer}>
+// 					<Text style={styles.version}>App v1.0</Text>
+// 				</View>
+// 			</View>
+// 		</View>
+// 	</GestureRecognizer>
+// )
+// }

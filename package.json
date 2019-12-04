@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "start": "react-native start",
+    "dev": "react-native run-android && react-native start",
+    "log": "react-native log-android",
     "test": "jest",
     "release": "cd android && ./gradlew assembleRelease"
   },
@@ -23,6 +25,8 @@
     "react-native-orientation-locker": "^1.1.7",
     "react-native-push-notification": "^3.1.9",
     "react-native-reanimated": "^1.4.0",
+    "react-native-safe-area-context": "^0.6.1",
+    "react-native-screens": "^1.0.0-alpha.23",
     "react-native-storage": "^1.0.1",
     "react-native-swipe-gestures": "^1.0.4",
     "react-native-vector-icons": "^6.6.0",

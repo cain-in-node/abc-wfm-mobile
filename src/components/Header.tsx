@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { DrawerActions } from 'react-navigation-drawer';
 
 // Components
 import Icon from 'react-native-vector-icons/FontAwesome5';
@@ -23,7 +24,7 @@ export default class Header extends Component<INavProps & IHeader> {
 
     return (
       <View style={styles.container}>
-        {!custom ? <TouchableOpacity style={[styles.button]} onPress={() => this.props.navigation.toggleDrawer()}>
+        {!custom ? <TouchableOpacity style={[styles.button]} onPress={() => this.props.navigation.dispatch(DrawerActions.toggleDrawer())}>
           <Icon name="bars" size={icon1} color={Colors.white}></Icon>
 			  </TouchableOpacity> : null}
         {custom ? <TouchableOpacity style={[styles.button]} onPress={() => this.props.handler()}>
