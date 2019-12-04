@@ -1,7 +1,7 @@
 import PushNotification from 'react-native-push-notification';
+import PushNotificationIOS from '@react-native-community/push-notification-ios';
 import axios from 'axios';
 import firebase from 'react-native-firebase';
-import { PushNotificationIOS } from 'react-native';
 import { SaveStore, LoadStore } from '../../asyncStorage/methods';
 import { ENKS } from '../enums/EStorage';
 import Colors from './Colors';
