@@ -34,6 +34,6 @@ export default class App extends React.Component {
 	}
 
 	render() {
-		return AuthApi.auth ? <DrawerContainer /> : <AuthContainer />;
+		return !AuthApi.auth ? <DrawerContainer /> : <AuthContainer />;
 	}
 }
